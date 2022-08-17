@@ -1,0 +1,27 @@
+{
+    "name": "is",
+    "aimee": "app",
+    "description": "Aimeejs的is模块，用于类型检查",
+    "main": "is.js",
+    "version": "1.1.0",
+    "scripts": {
+        "test": "uz -v"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Aimeejs/is.git"
+    },
+    "keywords": [
+        "is",
+        "aimee",
+        "aimee-is",
+        "uz"
+    ],
+    "author": "gavinning",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/Aimeejs/is/issues"
+    },
+    "homepage": "https://github.com/Aimeejs/is",
+    "dependencies": {}
+}
