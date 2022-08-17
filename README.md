@@ -6,6 +6,6 @@
 
 #### In this application here the following solutions are used: Node.js, Express, xml2js, EJS, XLSX, HTML5 and CSS3.
 
-#### I intend to make some improvements here, developing a more features to export for XLSX and PDF, complete API, dealing with errors and non-visual improvements.
+#### I intend to make some improvements here, developing a more features to convert json to XLSX and PDF, complete API, dealing with errors and non-visual improvements.
 
 # file_upload
