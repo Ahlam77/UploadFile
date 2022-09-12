@@ -1,5 +1,5 @@
 const express = require('express')
-const ControllerXML2Json = require('./controllers/ControllerXML2Json')
+const ControllerXml2Xlsx = require('./controllers/ControllerXml2Xlsx.js')
 
 //const data = require('./data/data.json')
 
@@ -9,10 +9,9 @@ route.get('/', (req, res) => res.render('index'))
 
 route.get('/json', (req, res) => res.render('json'))
 
-route.post('/convert', ControllerXML2Json.convert)
+route.post('/convert', ControllerXml2Xlsx.convertFromXmlToXlsx)
 
-// route.post('/teste', (req, res) => {
-//     return res.send(data)
-// })
+
+
 
 module.exports = route 
