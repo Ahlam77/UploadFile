@@ -7,7 +7,7 @@ const xlsxPath = "./public/data/data.xlsx";
 
 const xmlPath = "src/data/dataset.xml"
 const jsonPath = "./public/data/result.json"
-var jsonString = ""
+
 
 async function xml2jsonFromTo(xmlPath, jsonPath) {
     try {
@@ -15,7 +15,7 @@ async function xml2jsonFromTo(xmlPath, jsonPath) {
         const result = await xml2js.parseStringPromise(xml, {
             mergeAttrs: true
         })
-        jsonString = JSON.stringify(result, null, 4)
+      let jsonString = JSON.stringify(result, null, 4)
         //console.log(json)
         fs.writeFileSync(jsonPath, jsonString)
         //return jsonString
@@ -41,20 +41,10 @@ async function json2xlsxFromTo(jsonPath, xlsxPath) {
             fs.readFileSync(jsonPath, {
                 encoding: "utf8",
                 flag: "r",
-            })
-        );
-        console.log("===================")
-        console.log(jsonString)
-        console.log("===================")
-        json2xlsx.write(xlsxPath, "sheet1", [jsonString])
+            })).catalog.book;
+        json2xlsx.write(xlsxPath, "sheet1", data)
 
-        // let newWS = xlsx.utils.json_to_sheet(data);
-        // let newWB = xlsx.utils.book_new();
-        // xlsx.utils.book_append_sheet(newWS, newWB, "data");
-        // console.log(newWB)
-        // await xlsx.writeFile(xlsxPath, newWB);
 
-        // xlsx.writeFile(newWB, "./public/data/data.xlsx");
     } catch (error) {
         console.log(error);
     }
