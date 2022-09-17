@@ -1,9 +1,10 @@
 const json = require('body-parser')
 const fs = require('fs')
 const xml2js = require('xml2js')
-const xlsx = require('xlsx')
+const XLSX = require('xlsx')
 const json2xlsx = require("json2xlsx");
-const xlsxPath = "./public/data/data.xlsx";
+const xlsxPath ="./public/data/data.xlsx";
+//const download = require("download");
 
 const xmlPath = "src/data/dataset.xml"
 const jsonPath = "./public/data/result.json"
@@ -18,7 +19,7 @@ async function xml2jsonFromTo(xmlPath, jsonPath) {
       let jsonString = JSON.stringify(result, null, 4)
         //console.log(json)
         fs.writeFileSync(jsonPath, jsonString)
-        //return jsonString
+       // return jsonString
     } catch (error) {
         console.log(error)
     }
@@ -35,28 +36,34 @@ function convertFromXmlToJson(req, res) {
     })
 }
 
-async function json2xlsxFromTo(jsonPath, xlsxPath) {
+async function json2xlsxFromTo(jsonPath,xlsxPath ) {
     try {
-        let data = JSON.parse(
-            fs.readFileSync(jsonPath, {
-                encoding: "utf8",
-                flag: "r",
-            })).catalog.book;
-        json2xlsx.write(xlsxPath, "sheet1", data)
-
-
-    } catch (error) {
-        console.log(error);
+      let data = JSON.parse(fs.readFileSync(jsonPath)).catalog.book;
+      // console.log("File content:", data);
+       
+      json2xlsx.write(xlsxPath, "sheet", data);
+      console.log("we rock 😈 𓀎");
+      
+    } catch (err) {
+        console.error(err.massage);
     }
 }
+
 
 function convertFromJsonToXlsx(req, res) {
         json2xlsxFromTo(jsonPath, xlsxPath)
 }
+
 module.exports = {
     convertFromXmlToXlsx(req, res) {
         convertFromXmlToJson(req, res)
         convertFromJsonToXlsx(req, res)
+
         res.redirect('/json')
+      
+   
     }
+    
 }
+
+ 
