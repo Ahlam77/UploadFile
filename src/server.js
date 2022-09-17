@@ -21,4 +21,5 @@ server.use(express.urlencoded({ extended: true }))
 
 server.use(route)
 
- server.listen(8080, () => console.log('Server running on port 8080!let us go go gooooo 😍'))
+ server.listen(8080, () => console.log("Server let's gooooo 😈 🚀 🌋")
+ );
