@@ -11,6 +11,8 @@
     />
     <link rel="shortcut icon" href="/images/bot.png" />
     <link rel="stylesheet" href="/css/styles.css" />
+  
+
   </head>
 
   <body>
@@ -23,16 +25,26 @@
 
     <main>
       <div class="section-form">
+      
         <form action="/convert" method="POST" encType="multipart/form-data">
           <label for="file"
-            >Only .xml <span>*</span></label
-          >
+            >Only .xml <span>*</span></label  >
           <input type="file" id="fileXML" name="fileXML" required /><br />
-          <button class="btn-convert">Download</button>
+          <button class="btn-convert"  >Convert</button>
+        
+      </form>
+        
+        <!-- Form to handle single file download request-->
+       
+        <form action="/download" method="Get" >
+          <button class="btn-download" type="download" >Download</button>
+        
         </form>
       </div>
+     
     </main>
 
-    <!-- <script src="/scripts/scripts.js" defer type="module"></script> -->
+
+   
   </body>
 </html>
