@@ -71,13 +71,14 @@
     width: 900px;
     margin: 80px auto 0 auto;
     padding: 0;
-    display: flex;
+    display:flex;
     background: #fff;
     box-shadow: 0 2px 2px 0 rgb(66 66 66 / 8%), 0 2px 6px 2px rgb(66 66 66 / 16%);
     padding: 40px;
     text-align: left;
     border-radius: 4px;
-    display: flex;
+   
+    
   }
 
   .section-form p {
@@ -117,6 +118,7 @@
     display: block;
     margin-top: 12px;
   }
+
   
   /* Required Field*/
   label span {
@@ -124,7 +126,22 @@
     font-size: 14px;
     font-weight: 700;
   }
-  
+  .btn-download{
+    background: linear-gradient(to right, #231199,#3869ef);
+    border: none;
+    margin: 10px 0;
+    padding: 15px 38px;
+    text-align: center;
+    align-items: center;
+    text-transform: uppercase;
+    transition: 0.3s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    display: inline-block;
+    border-radius: 4px;
+  }
+form { display: inline; }
   .btn-convert {
     background: linear-gradient(to right, #231199,#3869ef);
     border: none;
@@ -137,11 +154,17 @@
     background-size: 200% auto;
     color: white;
     box-shadow: 0 0 20px #eee;
-    display: block;
+    display: inline-block;
     border-radius: 4px;
   }
 
   .btn-convert:hover {
+    background-position: center right;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #fff;
+    text-decoration: none;
+  }
+  .btn-download:hover {
     background-position: center right;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: #fff;
