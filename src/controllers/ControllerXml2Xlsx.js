@@ -59,7 +59,7 @@ module.exports = {
         convertFromXmlToJson(req, res)
         convertFromJsonToXlsx(req, res)
 
-        res.redirect('/json')
+        res.redirect('/')
       
    
     }
