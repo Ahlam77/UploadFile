@@ -36,14 +36,36 @@ function convertFromXmlToJson(req, res) {
     })
 }
 
+
 async function json2xlsxFromTo(jsonPath,xlsxPath ) {
     try {
-      let data = JSON.parse(fs.readFileSync(jsonPath)).catalog.book;
-      // console.log("File content:", data);
-       
-      json2xlsx.write(xlsxPath, "sheet", data);
-      console.log("we rock 😈 𓀎");
+      let data = JSON.parse(fs.readFileSync(jsonPath, {encoding:'utf8', flag:'r'}))
       
+       let actualArray = null;
+
+        while(!Array.isArray(actualArray)) {
+
+            for (const [key, value] of Object.entries(data)) {
+
+                if(Array.isArray(value)){
+
+                    actualArray = value;
+
+                }
+
+                else{
+
+                    data = value;
+
+                }
+
+            }
+
+        }
+
+        json2xlsx.write(xlsxPath, "sheet", actualArray);
+
+        console.log("we rock 😈 𓀎");
     } catch (err) {
         console.error(err.massage);
     }
